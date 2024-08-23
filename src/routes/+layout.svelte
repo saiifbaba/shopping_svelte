@@ -6,6 +6,13 @@
 	/** @type {import('./$types').LayoutData} */
 	// Create a store and update it when necessary...
 	const cart = writable([]);
+	const maxRating=writable(5);
+	const maxPricing=writable(200);
+	
+	setContext('cart', cart);
+	setContext("search",searchText);
+	setContext("category",selectedCategories);
+
 	
 	setContext('cart', cart);
 </script>

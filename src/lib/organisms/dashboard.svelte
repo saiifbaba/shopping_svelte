@@ -1,11 +1,39 @@
-<script>
-   import CardContainer from "$lib/molecules/card-container/card-container.svelte";
+<script lang="ts">
+  import CardContainer from "$lib/molecules/card-container.svelte";
+  import CardContainer from "$lib/molecules/card-container/card-container.svelte";
   import { SelectOption, type product } from "../../common/type";
   import Dropdown from "$lib/atoms/dropdown/dropdown.svelte";
+	import Category from "$lib/atoms/category/category.svelte";
+  import RangeContainer from "$lib/molecules/range-container/range-container.svelte";
+  export let data:product[];
+  export let selectedCategories:string[]=[];
+  export let selected:SelectOption;
+  export let onChange:(selected:SelectOption)=>void;
+  export let options:string[];
+  export let price:number;
+  export let rating:number;
+  export let searchText:string=""; 
+
+  const limit=5;
+  let currentPage=1;
+  let maxPages=Math.floor(data.length/limit);
+  function navigatePage(operation:string){
+    if(((operation==="add" && currentPage+1>maxPages) || (operation==="sub" &&currentPage-1===0))){
+      console.log("OUT OF BOUND");
+      return;
+    }
+    currentPage=operation==="add"? currentPage+1:currentPage-1;
+
+  }
+  function updateMaxPages(max:number){
+    maxPages=max;
+  }
+  function updateCurrentPage(pageNo:number){
+    currentPage=pageNo;
+
+  }
+  
 </script>
-
-
-
 
 
 
