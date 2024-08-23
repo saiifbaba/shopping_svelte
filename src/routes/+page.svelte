@@ -14,6 +14,5 @@
   }
 </script>
 <div class="p-2 dashboard-container  app-background h-100 w-100">
-  <Dashboard bind:selected={selected} onChange={onChange}  options={options} data={data.products}></Dashboard>
   <Dashboard bind:selected={selected} onSearch={onSearch} onChange={onChange}  options={options} data={data.products} searchText={searchText}></Dashboard>
 </div>
