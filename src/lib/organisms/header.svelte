@@ -1,12 +1,19 @@
-
-
-
-
-
-
-
-
-
+<script lang="ts">
+  import Input from "$lib/atoms/input/input.svelte";
+  import CartIcon from "$lib/icons/cart.svelte";
+  import SearchIcon from "$lib/icons/search.svelte";
+  import { page } from '$app/stores'
+  import { goto } from '$app/navigation';
+  import {getContext} from "svelte";
+  const searchStore:any= getContext('search');
+  const onSearch=(search:string)=>{
+    searchStore.set(search)
+  };
+  const  onCartClick=()=>{
+    goto("/cart");
+  }
+  $:showSearch=$page.url.pathname==="/"?true:false;
+</script>
 
 <div class="header w-full p-4  flex items-center justify-between bg-black">
   <div class="title-header">
