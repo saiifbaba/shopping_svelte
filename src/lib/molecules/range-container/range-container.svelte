@@ -22,7 +22,7 @@
 <Range  label={SelectOption.Rating} onChange={onChange} min="0" max="5" breakpoints={[0,1,2,3,4,5]}></Range>
 </div>
 <div class="price-range">
-  <Range label={SelectOption.Price} onChange={onChange} min="0" max="200" breakpoints={[0,50,100,150,200]}></Range>
+  <Range label={SelectOption.Price} onChange={onChange} min="0" max="1000" breakpoints={[0,50,100,150,200,500,1000]}></Range>
   </div>
 </div>
 </div>

@@ -4,6 +4,15 @@
  export let data:product[];
  export let selected:SelectOption;
   export let selectedCategories:string[]=[];
+   export let searchText:string="";
+ export let rating:number;
+ export let currentPage:number;
+ export let maxPages:number;
+ export let updateCurrentPage:(pageNo:number)=>void;
+ export let limit:number;
+ export let updateMaxPages:(max:number)=>void;
+  export let price:number;
+ let filteredData:product[]=data;
  let filteredData:product[]=[];
  $:if(selected!==SelectOption.Default){
     filteredData=data.sort((item1:product,item2:product)=>{
@@ -12,10 +21,42 @@
   }else{
       filteredData=data;
   }
+   
+   if(selectedCategories.length>0){
+     filteredData=filteredData.filter((data)=>{
+       return selectedCategories.includes(data.category);
+@@ -31,11 +38,28 @@
+        return +data.price<=price;
+      })
+    }
+    let max=Math.round(filteredData.length/limit);
+     updateMaxPages(max);
+  }else{
+      filteredData=data.sort((item1:product,item2:product)=>{
+     return (+item1.id) - (+item2.id)
+    })
+    let max=Math.round(filteredData.length/limit);
+    updateMaxPages(max);
+}
+$:if(currentPage){
+        if((currentPage-1)*limit<=filteredData.length){
+          paginatiedItems=filteredData.slice((currentPage-1)*limit,currentPage*limit);
+        }else{
+          paginatiedItems=filteredData;
+        }
+}
+$:if(maxPages){
+   if(currentPage>maxPages){
+     updateCurrentPage(maxPages);
+   }
+}
+function onCardClick(id:string){
+  goto(`/product/${id}`)
+
 </script>
 
-<div class="card-container w-full lg:w-4/5  grid grid-cols-2  lg:grid-cols-3 gap-4">
-    {#each  filteredData as item}
-        <Card label={item.title} price={item.price} rating={item.rating.rate} imageUrl={item.image}></Card>
+<div data-testid="card-container-element"  class="card-container w-full  grid grid-cols-1  lg:grid-cols-3 justify-space-between gap-6">
+    {#each  paginatiedItems as item}
+        <Card onClick={onCardClick} id={item.id}  label={item.title} price={item.price} rating={item.rating.rate} imageUrl={item.image}></Card>
     {/each}
 </div>

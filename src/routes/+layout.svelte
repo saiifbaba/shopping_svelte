@@ -7,7 +7,7 @@
 	// Create a store and update it when necessary...
 	const cart = writable([]);
 	const maxRating=writable(5);
-	const maxPricing=writable(200);
+	const maxPricing=writable(1000);
 	
 	setContext('cart', cart);
 	setContext("search",searchText);
