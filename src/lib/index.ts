@@ -9,3 +9,4 @@ import FilledStarIcon from "./icons/unfilled-star.svelte"
 import UnfilledStarIcon from "./icons/unfilled-star.svelte"
 import SearchIcon from "./icons/search.svelte";
 import CartIcon from "./icons/cart.svelte";
+import Category from "./atoms/category/category.svelte";

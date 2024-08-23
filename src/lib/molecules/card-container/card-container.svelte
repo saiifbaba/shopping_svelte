@@ -3,6 +3,7 @@
  import Card from "../atoms/card.svelte";
  export let data:product[];
  export let selected:SelectOption;
+  export let selectedCategories:string[]=[];
  let filteredData:product[]=[];
  $:if(selected!==SelectOption.Default){
     filteredData=data.sort((item1:product,item2:product)=>{
