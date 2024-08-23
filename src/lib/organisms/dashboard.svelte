@@ -1,6 +1,8 @@
-
-
-
+<script>
+   import CardContainer from "$lib/molecules/card-container/card-container.svelte";
+  import { SelectOption, type product } from "../../common/type";
+  import Dropdown from "$lib/atoms/dropdown/dropdown.svelte";
+</script>
 
 
 
