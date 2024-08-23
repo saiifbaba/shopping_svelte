@@ -2,9 +2,29 @@
 <script  lang="ts">
   import Button from "$lib/atoms/button.svelte";
   import { goto } from '$app/navigation';
-	import type { product } from "../../common/type";
+  import { getContext } from 'svelte';
+	import type { cart, product } from "../../common/type";
+   const cartStore:any= getContext('cart');
   export let product:product;
+
+  cartStore.update((cart:cart[])=>{
+      const product = cart.find(product => product.title === title);
+      if (product) {
+        product.quantity++;
+       }   else {
+         cart.push({ title, price, quantity: 1 });
+       }
+      return cart;
+    })
+    goto("/cart")
+    
 </script>
+
+
+
+
+
+
 <div class="product w-4/5 border grid grid-cols-2 bg-[#2f4558] rounded-lg">
 <div class="product-image-container p-4 w-1/2">
   <img class=" mix-blend-multiply" src={product.image} alt="id">
