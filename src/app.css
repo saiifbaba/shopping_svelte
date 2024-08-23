@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  /* background-color: #2E63D7ff;
+   */
+  background-color: #b8b9b7;
+}
+
+.heading-text-color {
+  color: #f9ca06;
+}
+
+.card-background-color {
+  background-color: #fffffd
+}
