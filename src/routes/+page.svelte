@@ -39,6 +39,6 @@
 
 
 </script>
-<div class="p-2 dashboard-container  app-background h-100 w-100">
+<div class="p-2 dashboard-container   app-background h-100 w-100" style="padding-bottom: 50px; bg-gray-100">
   <Dashboard rating={rating} price={price} bind:selected={selected} onChange={onChange}  options={options} data={data.products} searchText={searchText} selectedCategories={selectedCategories}></Dashboard>
 </div>

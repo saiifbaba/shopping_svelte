@@ -37,7 +37,7 @@
   
 </script>
 
-<div class="dashboard w-full flex flex-col lg:flex-row gap-4 mt-2 p-4">
+<div class="dashboard w-full flex flex-col lg:flex-row gap-4 mt-2 p-4 bg-gray-100">
   <div class="category-container-left w-full lg:w-1/5">
     <Category title="Sort With Categories" data={data}></Category>
     <RangeContainer></RangeContainer>

@@ -1,6 +1,7 @@
 <script>
   import Header from "$lib/organisms/header.svelte";
 import "../app.css";
+import Footer from "$lib/organisms/footer.svelte";
   import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
 	/** @type {import('./$types').LayoutData} */
@@ -24,7 +25,9 @@ import "../app.css";
 	<div class="layout"> 
 		<Header></Header>
 	</div>
-	<div class="flex-1 h-full">
+	<div class="flex-1 h-full bg-gray-100">
 		<slot></slot> 
 		</div>
+		<Footer></Footer>
 	</div>
+
