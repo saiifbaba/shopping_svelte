@@ -13,7 +13,7 @@
    }
  }
 </script>
-<div class="range-container w-36 h-42 lg:w-72 lg:h-44 p-2  mt-10 card-background-color rounded">
+<div class="range-container w-full h-42 lg:w-72 lg:h-44 p-2  mt-10 card-background-color rounded">
 <div class="title font-bold font-mono text-xl">
   <h1>Filter By</h1>
 </div>

@@ -7,7 +7,7 @@ const onSearchMock = vi.fn((search: string) => {
 });
 const placeholder = 'Search...';
 test('renders Search Input correctly with default props', () => {
-
+  
   render(Input, {placeholder,onSearch:onSearchMock});
 
   // Test input element rendering

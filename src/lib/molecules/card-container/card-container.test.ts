@@ -1,7 +1,7 @@
 import { expect, test, vi } from 'vitest';
 import { render, screen } from '@testing-library/svelte';
 import CardContainer from './card-container.svelte'; // Assuming your component's path
-import { SelectOption, type product } from '../../common/type';
+import { SelectOption, type product } from '../../../common/type';
 import { currentPage } from './card-container.svelte';
 import { maxPages } from './card-container.svelte';
 import { selectedCategories } from './card-container.svelte';
@@ -44,18 +44,6 @@ const mockMaxPages=4;
 const mockCurrentPage=1;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 test('renders Product List with default props', () => {
   render(CardContainer, { data: mockData,selected:SelectOption.Price,updateCurrentPage,updateMaxPages,rating:mockRating,price:mockPrice,limit:mockLimit,currentPage:mockCurrentPage,maxPages:mockMaxPages});
   // Verify product cards are rendered
@@ -79,7 +67,7 @@ test('sorts products by price when selected option is Price', () => {
 
 test('sorts products by highest rating when selected option is Rating', () => {
   let HighestRatingCard:product=mockData[1];  
-render(CardContainer, { data: mockData, selected: SelectOption.Rating,updateCurrentPage,updateMaxPages,rating:mockRating,price:mockPrice,limit:mockLimit,currentPage:mockCurrentPage,maxPages:mockMaxPages });
+  render(CardContainer, { data: mockData, selected: SelectOption.Rating,updateCurrentPage,updateMaxPages,rating:mockRating,price:mockPrice,limit:mockLimit,currentPage:mockCurrentPage,maxPages:mockMaxPages });
   const cardList = screen.getAllByRole('img');
   console.log(mockData);
   expect(cardList[0].id).toBe(HighestRatingCard.id); 

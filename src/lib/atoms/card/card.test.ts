@@ -2,6 +2,12 @@ import { expect, test, vi } from 'vitest'
 import userEvent from '@testing-library/user-event'
 import { fireEvent, render, screen, } from '@testing-library/svelte'
 import Card from "./card.svelte";
+import Star from "../star/star.svelte";
+
+
+
+
+
 test('renders Card correctly', () => {
   const onClickFn = vi.fn((id) => {
 
@@ -25,13 +31,9 @@ test('renders Card correctly', () => {
   const label = screen.getByText(productData.label);
   expect(label).toBeInTheDocument();
 
-  // Test price and rating
-  const price = screen.getByText(`${productData.price} ₹`);
+  // Test price
+  const price = screen.getByText(`\u20B9${productData.price}`);
   expect(price).toBeInTheDocument();
-  const rating = screen.getByText(`Rating ${productData.rating}`);
-  expect(rating).toBeInTheDocument();
-
-  //Button Click
   const card = screen.getByTestId("card-element"); // Accessible card as a button
     userEvent.click(card);
     fireEvent(card,new MouseEvent('click', {bubbles: true,cancelable: true,}))

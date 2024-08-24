@@ -14,7 +14,7 @@
    $:categoryStore.set(selectedCategories); 
 </script>
 
-<div class="w-full h-42 lg:w-72 lg:h-44 card-background-color p-2 rounded"></div>
+<div class="w-full h-42 lg:w-72 lg:h-44 card-background-color p-2 rounded">
  <div class="title">
    <h2 class="font-bold ml-2">{title}</h2>
  </div>

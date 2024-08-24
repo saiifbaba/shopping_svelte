@@ -4,6 +4,8 @@
 	import Button from "$lib/atoms/button/button.svelte";
   export let cartProducts:cart[]=[];
   import { toasts, ToastContainer, FlatToast }  from "svelte-toasts";
+
+
   const showToast = () => {
     const toast = toasts.add({
       title: 'Success',

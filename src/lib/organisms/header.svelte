@@ -13,6 +13,7 @@
     goto("/cart");
   }
   $:showSearch=$page.url.pathname==="/"?true:false;
+
 </script>
 
 <div class="header w-full p-4  flex items-center justify-between bg-black">

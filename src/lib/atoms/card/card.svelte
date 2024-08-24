@@ -1,7 +1,12 @@
 
 <script lang="ts">
   export let imageUrl:string;
-
+  export let id:string;
+  export let label:string;
+  export let rating:number;
+  export let price:number;
+  export let onClick:(id:string)=>void;
+  import Star from "../star/star.svelte";
 </script>
 
 <div data-testid="card-element" on:click={()=>onClick(id)} class="card-background-color card cursor-pointer font-serif  w-full h-42 lg:w-72 lg:h-72 rounded overflow-hidden shadow-lg bg-white flex flex-col items-center">
