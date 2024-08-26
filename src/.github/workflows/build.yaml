@@ -1,4 +1,4 @@
-name: CI/CD - SvelteKit with Tests
+name: CI/CD - Svelte with Tests
 
 on:
   push:

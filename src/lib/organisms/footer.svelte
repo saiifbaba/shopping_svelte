@@ -1,10 +1,11 @@
-<script>
+  <script>
 
 	import { hover } from "@testing-library/user-event/dist/cjs/convenience/hover.js";
 
+
 </script>
 <!-- $lib/organisms/footer.svelte -->
-<footer class="footer bg-gray-800 p-4 float bottom-0 left-0 right-0 z-index-1">
+<footer class="footer bg-gray-800 p-4  bottom-0 left-0 right-0 z-index-1">
   <div class="flex justify-between items-center">
     <div class="logo-and-name flex items-center">
       <img src="logo.png" alt="FakeStore Logo" class="h-8 w-8 mr-2">

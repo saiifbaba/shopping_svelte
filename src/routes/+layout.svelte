@@ -1,9 +1,9 @@
 <script>
   import Header from "$lib/organisms/header.svelte";
-import "../app.css";
-import Footer from "$lib/organisms/footer.svelte";
+  import "../app.css";
   import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
+	import Footer from "$lib/organisms/footer.svelte";
 	/** @type {import('./$types').LayoutData} */
 	// Create a store and update it when necessary...
 	const cart = writable([]);
@@ -28,6 +28,8 @@ import Footer from "$lib/organisms/footer.svelte";
 	<div class="flex-1 h-full bg-gray-100">
 		<slot></slot> 
 		</div>
+		<div class="layout5">
 		<Footer></Footer>
+		</div>
 	</div>
 
